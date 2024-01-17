@@ -14,7 +14,14 @@ require_once __DIR__ . '/Prodotto.php';
     <!--/FONT AWESOME-->
 </head>
 <body>
-    <h1>PET SHOP</h1>
+    <header>
+        <h1>PET SHOP</h1>
+    </header>
+    <main>
+        <article>
 
+        </article>
+    </main>
+    
 </body>
 </html>
