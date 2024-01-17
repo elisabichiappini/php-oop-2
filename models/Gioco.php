@@ -1,9 +1,14 @@
 <?php
 // inclusione classe Prodotto
 require_once __DIR__ . '/Prodotto.php';
+require_once __DIR__ . '/../trait/Colore.php';
 class Gioco extends Prodotto {
+    //trait
+    use Colore;
+    //attributi
     private $materiale;
     private $made_in;
+    // private $colore;
     public $tipo_prodotto = "Gioco";
     
     //funzioni setter e getter
@@ -14,4 +19,12 @@ class Gioco extends Prodotto {
     public function get_made_in() {
         return $this->made_in;
     }
+
+    // //COLORE   
+    // public function set_colore($_colore) {
+    //     $this->colore = $_colore;
+    // }
+    // public function get_colore() {
+    //     return $this->colore;
+    // }
 }
