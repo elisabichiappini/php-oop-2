@@ -5,18 +5,22 @@ require_once __DIR__ . '/Categoria.php';
 class Prodotto {
     //proprietà della classe
     private $id;
+    private $nome;
     private $brand;
+    private $img;
     private $prezzo;
     private $sconto = 0;
     private $made_in;
-    private $nomeCategoria;
+    private $categoria;
 
     //construct classe genitore
-    function __construct($_id, $_brand, $_prezzo, Categoria $_nomeCategoria) {
+    function __construct($_id, $_nome, $_brand, $_img, $_prezzo, Categoria $_nomeCategoria) {
         $this->id = $_id;
+        $this->nome = $_nome;
         $this->brand = $_brand;
+        $this->img = $_img;
         $this->prezzo = $_prezzo;
-        $this->nomeCategoria = $_nomeCategoria;
+        $this->categoria = $_nomeCategoria;
     }
     
     //funzioni setter & getter
@@ -30,6 +34,16 @@ class Prodotto {
         return $this->id;
     }
 
+    //NOME
+    //funzione per scrivere lo nome
+    public function set_nome($_nome) {
+        $this->nome = $_nome;
+    }
+    //funzione per leggere lo nome
+    public function get_nome() {
+        return $this->nome;
+    }
+
     //BRAND
     //funzione per scrivere lo brand
     public function set_brand($_brand) {
@@ -38,6 +52,16 @@ class Prodotto {
     //funzione per leggere lo brand
     public function get_brand() {
         return $this->brand;
+    }
+
+    //IMG
+    //funzione per scrivere lo img
+    public function set_img($_img) {
+        $this->img = $_img;
+    }
+    //funzione per leggere lo img
+    public function get_img() {
+        return $this->img;
     }
 
     //PREZZO
@@ -71,13 +95,13 @@ class Prodotto {
     }
 
     //CATEGORIA
-    //funzione per scrivere lo nomeCategoria
-    public function set_nomeCategoria($_nomeCategoria) {
-        $this->nomeCategoria = $_nomeCategoria;
+    //funzione per scrivere lo categoria
+    public function set_categoria($_categoria) {
+        $this->categoria = $_categoria;
     }
-    //funzione per leggere lo nomeCategoria
-    public function get_nomeCategoria() {
-        return $this->nomeCategoria;
+    //funzione per leggere lo categoria
+    public function get_categoria() {
+        return $this->categoria;
     }
 }
 ?>

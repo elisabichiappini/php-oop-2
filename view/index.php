@@ -31,10 +31,12 @@ require_once __DIR__ . '/../controller/db.php';
                 <div class="col-4">
                 <!--Card-->
                     <div class="card width-100">
-                        <img src="<?php echo $obj->get_img()?>" class="card-img-top" alt="...">
+                        <img src="<?php echo $obj->get_img();?>" class="card-img-top" alt="<?php echo $obj->get_nome();?>">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h2 class="card-title"><?php echo $obj->get_nome()?></h2>
+                            <p class="card-text"><?php echo $obj->get_brand() ?></p>
+                            <h6 class="card-text"><?php echo strtoupper($obj->get_categoria()->get_nomeCategoria())?></h6>
+                            <p class="card-text"><?php echo $obj->get_prezzo() ?></p>
                             <a href="#" class="btn btn-primary">Buy</a>
                         </div>
                     </div>
