@@ -10,12 +10,4 @@ class Cuccia extends Prodotto {
     private $colore;
     public $tipo_prodotto = "Cuccia";
 
-    // //funzioni setter e getter
-    // //COLORE    
-    // public function set_colore($_colore) {
-    //     $this->colore = $_colore;
-    // }
-    // public function get_colore($_colore) {
-    //     return $this->colore;
-    // }
 }

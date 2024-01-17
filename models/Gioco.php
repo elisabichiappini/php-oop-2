@@ -8,7 +8,6 @@ class Gioco extends Prodotto {
     //attributi
     private $materiale;
     private $made_in;
-    // private $colore;
     public $tipo_prodotto = "Gioco";
     
     //funzioni setter e getter
@@ -19,12 +18,4 @@ class Gioco extends Prodotto {
     public function get_made_in() {
         return $this->made_in;
     }
-
-    // //COLORE   
-    // public function set_colore($_colore) {
-    //     $this->colore = $_colore;
-    // }
-    // public function get_colore() {
-    //     return $this->colore;
-    // }
 }
