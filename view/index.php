@@ -17,10 +17,10 @@ require_once __DIR__ . '/../controller/db.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!--Bootstrap CDN-->
 </head>
-<body>
+<body class="bg-dark text-white">
     <!--Intestazione Pet Shop-->
-    <header>
-        <h1>PET SHOP</h1>
+    <header class="container text-center text-uppercase">
+        <h1 class="p-4">Pet shop</h1>
     </header>
     <!--/Intestazione Pet Shop-->
     <!--Corpo progetto-->
@@ -31,13 +31,14 @@ require_once __DIR__ . '/../controller/db.php';
                 <div class="col-4">
                 <!--Card-->
                     <div class="card width-100">
-                        <img src="<?php echo $obj->get_img();?>" class="card-img-top" alt="<?php echo $obj->get_nome();?>">
+                        <img src="<?php echo $obj->get_img(); ?>" class="card-img-top" alt="<?php echo $obj->get_nome();?>">
                         <div class="card-body">
-                            <h2 class="card-title"><?php echo $obj->get_nome()?></h2>
-                            <p class="card-text"><?php echo $obj->get_brand() ?></p>
-                            <h6 class="card-text"><?php echo strtoupper($obj->get_categoria()->get_nomeCategoria())?></h6>
-                            <p class="card-text"><?php echo $obj->get_prezzo() ?></p>
-                            <a href="#" class="btn btn-primary">Buy</a>
+                            <h2 class="card-title"><?php echo $obj->get_nome(); ?></h2>
+                            <h3 class="card-text"><?php echo $obj->tipo_prodotto?></h3>
+                            <h4 class="card-text"><?php echo $obj->get_brand(); ?></h4>
+                            <h6 class="card-text"><?php echo strtoupper($obj->get_categoria()->get_nomeCategoria())?> <?php echo ($obj->get_categoria()->get_icona())?></h6>
+                            <p class="card-text"><?php echo $obj->get_prezzo(); ?> Euro</p>
+                            <a href="#" class="btn btn-primary">Aggiungi al carrello <i class="fa-sharp fa-solid fa-basket-shopping"></i></a>
                         </div>
                     </div>
                     <!--/Card-->

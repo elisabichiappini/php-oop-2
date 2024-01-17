@@ -4,6 +4,7 @@ require_once __DIR__ . '/Prodotto.php';
 class Cuccia extends Prodotto {
     private $materiale;
     private $colore;
+    public $tipo_prodotto = "Cuccia";
 
     //funzioni setter e getter
     //COLORE    

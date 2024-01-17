@@ -29,7 +29,3 @@ $objsArray = [
     $cuccia_collie,
 ];
 
-echo "<pre>";
-var_dump($objsArray);
-echo "</pre>";
-?>

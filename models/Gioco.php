@@ -4,6 +4,7 @@ require_once __DIR__ . '/Prodotto.php';
 class Gioco extends Prodotto {
     private $materiale;
     private $made_in;
+    public $tipo_prodotto = "Gioco";
     
     //funzioni setter e getter
     //MADE IN    

@@ -5,6 +5,7 @@ class Cibo extends Prodotto {
     private $ingredienti;
     private $scadenza;
     private $peso;
+    public $tipo_prodotto = "Cibo";
 
     // funzioni setter e getter
     //SCADENZA
