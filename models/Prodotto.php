@@ -1,20 +1,23 @@
 <?php
 
-// classe genitore
+// classe Genitore
 class Prodotto {
-    public $nomeObj;
+   
+    public $brand;
     public $prezzo;
     public $sconto = 0;
     public $madeIn;
     public $descrizione;
     public $recensioni;
+    public $peso;
 
-    //construct 
-    function __construct($_nomeObj, $_prezzo, $_madeIn)
-    {
-        $this->nomeObj = $_nomeObj;
+    //construct genitore
+    function __construct( $_brand, $_prezzo, $_madeIn, $_peso) {
+        $this->brand = $_brand;
+        $this->madeIn = $_madeIn;
         $this->prezzo = $_prezzo;
         $this->setSconto($_madeIn);
+        $this->peso = $_peso;
     }
 
     //funzione per scrivere lo sconto, se fatto in Italia allora sconto 20%, altrimenti no sconto.
@@ -31,12 +34,12 @@ class Prodotto {
     }
 }
 
-//classe figlio
-class prodottoCategoria extends Prodotto {
+//classe ProdottoCategoria figlio di Prodotto
+class ProdottoCategoria extends Prodotto {
     public $categoria;
 
-    function __construct($_nomeObj, $_prezzo, $_madeIn, $_categoria) {
-    parent::__construct($_nomeObj, $_prezzo, $_madeIn);
+    function __construct($_brand, $_prezzo, $_madeIn,  $_peso, $_categoria) {
+    parent::__construct($_brand, $_prezzo, $_madeIn, $_peso);
     $this->categoria = $_categoria;
     }
     //funzione per settare la categoria
@@ -45,17 +48,24 @@ class prodottoCategoria extends Prodotto {
     }
 }
 
-//istanzio prodotti: cibo, cuccia, gioco
-$cibo = new Prodotto('MongePuppy', 70, 'Italy');
-$cuccia = new Prodotto('Cuccia', 100, 'Germany');
-$gioco = new Prodotto('Palla Pet', 30, 'France');
+//classe Obj figlio di ProdottoCategoria
+class Obj extends ProdottoCategoria {
+    public $nomeObj;
 
-//istanzio prodotto in base alla categoria 
-$perCane = new prodottoCategoria('MongePuppy', 70, 'Italy', 'cane');
-$perGatto = new prodottoCategoria('MongePuppy', 70, 'France', 'gatto');
+    function __construct($_brand, $_prezzo, $_madeIn, $_peso, $_categoria, $_nomeObj){
+    parent::__construct($_brand, $_prezzo, $_madeIn, $_peso, $_categoria,);
+    $this->nomeObj = $_nomeObj;
+    }
+}
+
+
+//istanzio prodotti: cibo, cuccia, gioco
+$prodotto1 = new Obj('Salmone health Monge', 70, 'Italy', 50, 'Cane', 'Salmone Health Monge');
+$prodotto2 = new Obj('Arcaplanet', 100, 'Great Bretan', 20, 'Gatto','Care Cuccia Arcaplanet');
+$prodotto3 = new Obj('Pet Toys', 30 , 'France', 1, 'Gatto', 'Palla Pet Gioco');
 
 echo "<pre>";
-var_dump($perCane, $perGatto);
+var_dump($prodotto1, $prodotto2, $prodotto3);
 echo "</pre>";
 
 ?>
