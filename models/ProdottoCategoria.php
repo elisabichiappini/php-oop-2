@@ -1,4 +1,5 @@
 <?php
+
 //classe ProdottoCategoria figlio di Prodotto
 class ProdottoCategoria extends Prodotto {
     public $categoria;
@@ -12,4 +13,5 @@ class ProdottoCategoria extends Prodotto {
         $this->categoria = $_categoria;
     }
 }
+
 ?>
