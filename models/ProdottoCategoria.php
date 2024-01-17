@@ -10,8 +10,13 @@ class ProdottoCategoria extends Prodotto {
     }
     //funzione per settare la categoria
     public function setCategoria ($_categoria) {
-        $this->categoria = $_categoria;
+        if(strtolower($_categoria) === 'cane') {
+            $this->categoria = '<i class="fa-solid fa-shield-dog"></i>';
+        } elseif (strtolower($_categoria) === 'gatto') {
+            $this->categoria = '<i class="fa-solid fa-shield-cat"></i>';
+        } else {
+            $this->categoria = '<i class="fa-solid fa-paw"></i>';
+        }
     }
 }
-
 ?>

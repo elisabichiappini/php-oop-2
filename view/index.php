@@ -1,6 +1,6 @@
 <?php
 //inclusione con direttiva dir del file Prodotto contenenti le classi
-require_once __DIR__ . '/Prodotto.php';
+require_once __DIR__ . '/../controller/db.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,10 @@ require_once __DIR__ . '/Prodotto.php';
     </header>
     <main>
         <article>
-
+            <h2><?php echo $prodotto1->nomeObj ?></h2>
+            <h3><?php echo $prodotto1->madeIn ?></h3>
+            <h3><?php echo $prodotto1->peso ?></h3>
+            <h3><?php echo $prodotto1->categoria ?></h3>
         </article>
     </main>
     
