@@ -34,38 +34,4 @@ class Prodotto {
     }
 }
 
-//classe ProdottoCategoria figlio di Prodotto
-class ProdottoCategoria extends Prodotto {
-    public $categoria;
-
-    function __construct($_brand, $_prezzo, $_madeIn,  $_peso, $_categoria) {
-    parent::__construct($_brand, $_prezzo, $_madeIn, $_peso);
-    $this->categoria = $_categoria;
-    }
-    //funzione per settare la categoria
-    public function setCategoria ($_categoria) {
-        $this->categoria = $_categoria;
-    }
-}
-
-//classe Obj figlio di ProdottoCategoria
-class Obj extends ProdottoCategoria {
-    public $nomeObj;
-
-    function __construct($_brand, $_prezzo, $_madeIn, $_peso, $_categoria, $_nomeObj){
-    parent::__construct($_brand, $_prezzo, $_madeIn, $_peso, $_categoria,);
-    $this->nomeObj = $_nomeObj;
-    }
-}
-
-
-//istanzio prodotti: cibo, cuccia, gioco
-$prodotto1 = new Obj('Salmone health Monge', 70, 'Italy', 50, 'Cane', 'Salmone Health Monge');
-$prodotto2 = new Obj('Arcaplanet', 100, 'Great Bretan', 20, 'Gatto','Care Cuccia Arcaplanet');
-$prodotto3 = new Obj('Pet Toys', 30 , 'France', 1, 'Gatto', 'Palla Pet Gioco');
-
-echo "<pre>";
-var_dump($prodotto1, $prodotto2, $prodotto3);
-echo "</pre>";
-
 ?>
