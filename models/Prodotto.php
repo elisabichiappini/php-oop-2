@@ -16,10 +16,9 @@ class Prodotto {
     private $categoria;
 
     //construct classe genitore
-    function __construct($_id, $_nome, $_brand, $_img, $_prezzo, Categoria $_nomeCategoria) {
+    function __construct($_id, $_nome, $_img, $_prezzo, Categoria $_nomeCategoria) {
         $this->id = $_id;
         $this->nome = $_nome;
-        $this->brand = $_brand;
         $this->img = $_img;
         $this->prezzo = $_prezzo;
         $this->categoria = $_nomeCategoria;
@@ -38,19 +37,30 @@ class Prodotto {
 
     //NOME
     //funzione per scrivere lo nome
+    //exception
     public function set_nome($_nome) {
-        $this->nome = $_nome;
+        // $this->nome = $_nome;
     }
     //funzione per leggere lo nome
     public function get_nome() {
+        
         return $this->nome;
     }
 
     //BRAND
     //funzione per scrivere lo brand
+    //EXCEPTION = se brand è vuoto gestisco e lancio l'errore
     public function set_brand($_brand) {
-        $this->brand = $_brand;
-    }
+            try {
+                if($_brand === ''){
+                throw new Exception('N.D.');
+            } 
+                $this->brand = $_brand;
+        }
+        catch (Exception $e) {
+            $this->brand = $e->getMessage();   
+        }  
+    } 
     //funzione per leggere lo brand
     public function get_brand() {
         return $this->brand;
@@ -63,12 +73,6 @@ class Prodotto {
     }
     //funzione per leggere lo img
     public function get_img() {
-        //exception
-        try {
-            throw new Exception('Collegamento immagine non corretto'); 
-        } catch (Exception $e) {
-            return "immagine non trovata";
-        }
         return $this->img;
     }
 

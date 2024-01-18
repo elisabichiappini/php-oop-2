@@ -31,14 +31,27 @@ require_once __DIR__ . '/../controller/db.php';
                 <div class="col-4">
                 <!--Card-->
                     <div class="card width-100">
-                        <img src="<?php echo $obj->get_img(); ?>" class="card-img-top" alt="<?php echo $obj->get_nome();?>">
+                        <img src="<?php echo $obj->get_img(); ?>" class="card-img-top" alt="<?php echo $obj->get_nome(); ?>">
                         <div class="card-body">
-                            <h2 class="card-title"><?php echo $obj->get_nome(); ?></h2>
-                            <h3 class="card-text"><?php echo $obj->tipo_prodotto?></h3>
-                            <h4 class="card-text"><?php echo $obj->get_brand(); ?> - <?php echo $obj->get_made_in(); ?></h4>
-                            <h6 class="card-text"><?php echo strtoupper($obj->get_categoria()->get_nomeCategoria())?> <?php echo ($obj->get_categoria()->get_icona())?></h6>
-                            <p class="card-text"><?php echo $obj->get_prezzo(); ?> Euro</p>
-                            <a href="#" class="btn btn-primary">Aggiungi al carrello <i class="fa-sharp fa-solid fa-basket-shopping"></i></a>
+                            <h2 class="card-title">
+                                <?php echo $obj->get_nome(); ?></h2>
+                            <h3 class="card-text">
+                                <?php echo $obj->tipo_prodotto?>
+                            </h3>
+                            <h4 class="card-text">
+                                <?php echo $obj->get_brand(); ?>
+                                <?php echo $obj->get_made_in(); ?>
+                            </h4>
+                            <h6 class="card-text">
+                                <?php echo strtoupper($obj->get_categoria()->get_nomeCategoria()); ?>
+                                <?php echo $obj->get_categoria()->get_icona(); ?>
+                            </h6>
+                            <p class="card-text">
+                                <?php echo $obj->get_prezzo(); ?> Euro
+                            </p>
+                            <a href="#" class="btn btn-primary">
+                                Aggiungi al carrello <i class="fa-sharp fa-solid fa-basket-shopping ms-2"></i>
+                            </a>
                         </div>
                     </div>
                     <!--/Card-->
