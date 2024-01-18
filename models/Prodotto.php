@@ -3,6 +3,8 @@
 require_once __DIR__ . '/Categoria.php';
 // classe Genitore
 class Prodotto {
+    //trait
+    use MadeIn;
     //proprietà della classe
     private $id;
     private $nome;
@@ -10,7 +12,6 @@ class Prodotto {
     private $img;
     private $prezzo;
     private $sconto = 0;
-    private $made_in;
     private $categoria;
 
     //construct classe genitore
@@ -82,16 +83,6 @@ class Prodotto {
     //funzione per leggere lo sconto
     public function get_sconto() {
         return $this->sconto;
-    }
-
-    //MADE IN
-    //funzione per scrivere lo made_in
-    public function set_made_in($_made_in) {
-        $this->made_in = $_made_in;
-    }
-    //funzione per leggere lo made_in
-    public function get_made_in() {
-        return $this->made_in;
     }
 
     //CATEGORIA
