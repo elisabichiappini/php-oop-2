@@ -7,7 +7,6 @@ class Cuccia extends Prodotto {
     use Colore;
     //attributi
     private $materiale;
-    private $colore;
     public $tipo_prodotto = "Cuccia";
 
 }

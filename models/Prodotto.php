@@ -1,6 +1,7 @@
 <?php
 // includo classe categoria
 require_once __DIR__ . '/Categoria.php';
+require_once __DIR__ . '/../trait/MadeIn.php';
 // classe Genitore
 class Prodotto {
     //trait
@@ -62,6 +63,12 @@ class Prodotto {
     }
     //funzione per leggere lo img
     public function get_img() {
+        //exception
+        try {
+            throw new Exception('Collegamento immagine non corretto'); 
+        } catch (Exception $e) {
+            return "immagine non trovata";
+        }
         return $this->img;
     }
 
